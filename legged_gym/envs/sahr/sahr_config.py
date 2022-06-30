@@ -1,12 +1,13 @@
 from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobotCfgPPO
 import numpy as np
+from isaacgym import gymapi
 
 class SahrRoughCfg( LeggedRobotCfg ):
     class env( LeggedRobotCfg.env ):
         num_envs = 1024
         num_actions = 20
         num_observations = 72
-        episode_length_s = 0.5
+        episode_length_s = 20.0
     class terrain( LeggedRobotCfg.terrain ):
         mesh_type = 'plane' 
         measure_heights = False
@@ -91,37 +92,42 @@ class SahrRoughCfg( LeggedRobotCfg ):
         terminate_after_contacts_on = ["trunk_1", "u_shoulder_1", "u_shoulder_2",
                                        "right_humerus_1", "left_humerus_1",
                                        "left_boxing_glove", "right_boxing_glove"
-                                       "right_knee_1", "left_knee_1", "head_1"]
+                                       "right_knee_1", "left_knee_1", "head_1", 
+                                       "u_block_1", "u_block_2", "left_radius_1",
+                                       "right_radius_1"]
         self_collisions = 1 # 1 to disable, 0 to enable...bitwise filter
         max_angular_velocity = 3.
         max_linear_velocity = 3.
         default_dof_drive_mode = 1
+        flip_visual_attachments = False
+        mesh_normal_mode = gymapi.FROM_ASSET
+        override_inertia = False
   
     class rewards( LeggedRobotCfg.rewards ):
         class scales( LeggedRobotCfg.rewards.scales ):
-            dof_pos_limits = 0.0
-            lin_vel_z = -0.2
-            tracking_lin_vel = 1.0
-            tracking_ang_vel = 0.5
-            ang_vel_xy = -0.01
-            orientation = -0.
-            dof_vel = -0.001
-            dof_acc = -2.5e-7
-            base_height = -0.0 
-            feet_air_time =  2.0
-            collision = -1.
-            feet_stumble = -0.0 
-            action_rate = -0.01
-            stand_still = -0.0
-            termination = 0.0
+            # dof_pos_limits = 0.0
+            # lin_vel_z = -0.2
+            # tracking_lin_vel = 1.0
+            # tracking_ang_vel = 0.5
+            # ang_vel_xy = -0.01
+            # orientation = -0.
+            # dof_vel = -0.001
+            # dof_acc = -2.5e-7
+            # base_height = -0.0 
+            # feet_air_time =  1.0
+            # collision = -1.
+            # feet_stumble = -0.0 
+            action_rate = -0.0025
+            # stand_still = -0.0
+            # termination = -100.0
         
-        time_of_step = 0.25 #longer steps get positive reward
-        soft_dof_pos_limit = 0.95
-        base_height_target = 0.35        
-        soft_dof_vel_limit = 0.95
-        soft_torque_limit = 0.95
-        max_contact_force = 250.0 # forces above this value are penalized
-        only_positive_rewards = False
+        time_of_step = 0.3 #longer steps get positive reward
+        # soft_dof_pos_limit = 0.95
+        # base_height_target = 0.35        
+        # soft_dof_vel_limit = 0.95
+        # soft_torque_limit = 0.95
+        # max_contact_force = 250.0 # forces above this value are penalized
+        # only_positive_rewards = False
 
     class sim (LeggedRobotCfg.sim ):
         dt =  0.0025

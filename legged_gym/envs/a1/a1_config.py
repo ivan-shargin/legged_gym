@@ -69,6 +69,7 @@ class A1RoughCfg( LeggedRobotCfg ):
         penalize_contacts_on = ["thigh", "calf"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 1 # 1 to disable, 0 to enable...bitwise filter
+        default_dof_drive_mode = 1
   
     class rewards( LeggedRobotCfg.rewards ):
         soft_dof_pos_limit = 0.9

@@ -116,7 +116,8 @@
       xyz="0 0 -1" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="head_1">
@@ -172,7 +173,8 @@
       xyz="0.015247063759876 0 0.999883756767107" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="Head_Up">
@@ -492,8 +494,11 @@
     <axis
       xyz="0 0 -1" />
     <limit
+      lower = "-0.5"
+      upper = "1.5"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="u_block_2_bone1">
@@ -654,8 +659,12 @@
     <axis
       xyz="0 0 -0.999999999998778" />
     <limit
+      lower = "-0.6"
+      upper = "0.6"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
+    <contact_coefficients kp="20.0" kd="0.5"/>
   </joint>
   <link
     name="left_knee_1">
@@ -710,10 +719,11 @@
     <axis
       xyz="0 0 -0.999999999998778" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-2.1"
+      upper="1.0"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="tibia_2">
@@ -771,7 +781,8 @@
       effort="6"
       lower="0"
       upper="1.5"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="mx106_block_mir_2">
@@ -826,8 +837,11 @@
     <axis
       xyz="0 0 -1" />
     <limit
+      lower = "-0.8"
+      upper = "1.0"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="left_foot_1">
@@ -882,8 +896,11 @@
     <axis
       xyz="0 0 -1" />
     <limit
+      lower = "-0.5"
+      upper = "0.5"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="left_foot_1_0_foot_protection">
@@ -1892,8 +1909,11 @@
     <axis
       xyz="0 0 -1" />
     <limit
+      lower = "-0.5"
+      upper = "1.5"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="u_block_1_bone1">
@@ -2054,8 +2074,11 @@
     <axis
       xyz="0 0 1" />
     <limit
+      lower = "-0.6"
+      upper = "0.6"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="right_knee_1">
@@ -2110,10 +2133,11 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-2.1"
+      upper="1.0"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="tibia_1">
@@ -2171,7 +2195,8 @@
       effort="6"
       lower="0"
       upper="1.5"      
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="mx106_block_1">
@@ -2226,8 +2251,11 @@
     <axis
       xyz="0 0 1" />
     <limit
+      lower = "-0.8"
+      upper = "1.0"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="right_foot_1">
@@ -2282,8 +2310,11 @@
     <axis
       xyz="0 0 -1" />
     <limit
+      lower = "-0.5"
+      upper = "0.5"
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="right_foot_clear_front_left">
@@ -3293,7 +3324,8 @@
       xyz="0 0 0.999999999998778" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="left_humerus_1">
@@ -3349,7 +3381,8 @@
       xyz="0 0 -1" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="left_radius_1">
@@ -3405,7 +3438,8 @@
       xyz="0 0 -0.999999999998778" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="left_radius_1_1_radius_plate">
@@ -3832,7 +3866,8 @@
       xyz="0 0 1" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="right_humerus_1">
@@ -3888,7 +3923,8 @@
       xyz="0 0 0.999999999998778" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="right_radius_1">
@@ -3944,7 +3980,8 @@
       xyz="0 0 -1" />
     <limit
       effort="6"
-      velocity="0" />
+      velocity="50" />
+    <dynamics damping="0.5" stiffness="20.0"/>
   </joint>
   <link
     name="right_radius_1_0_radius_plate">

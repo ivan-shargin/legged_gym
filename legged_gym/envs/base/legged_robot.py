@@ -366,8 +366,7 @@ class LeggedRobot(BaseTask):
         actions_scaled = actions * self.cfg.control.action_scale
         control_type = self.cfg.control.control_type
         if control_type=="P":            
-            torques = self.p_gains*(actions_scaled + self.default_dof_pos - self.dof_pos) - self.d_gains*self.dof_vel
-            
+            torques = self.p_gains*(actions_scaled + self.default_dof_pos - self.dof_pos) - self.d_gains*self.dof_vel            
         elif control_type=="V":
             torques = self.p_gains*(actions_scaled - self.dof_vel) - self.d_gains*(self.dof_vel - self.last_dof_vel)/self.sim_params.dt
         elif control_type=="T":
@@ -640,6 +639,8 @@ class LeggedRobot(BaseTask):
         asset_options.armature = self.cfg.asset.armature
         asset_options.thickness = self.cfg.asset.thickness
         asset_options.disable_gravity = self.cfg.asset.disable_gravity
+        asset_options.mesh_normal_mode = self.cfg.asset.mesh_normal_mode
+        asset_options.override_inertia = self.cfg.asset.override_inertia
 
         robot_asset = self.gym.load_asset(self.sim, asset_root, asset_file, asset_options)
         self.num_dof = self.gym.get_asset_dof_count(robot_asset)
